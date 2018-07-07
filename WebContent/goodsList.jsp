@@ -135,15 +135,14 @@
 
 		<script type="text/javascript">
 			$(window).ready(function() {
-
 				//点击导航中的li，更改show中的内容
 				//更改标题
-				$(".banner-ul li").click(function(){
-//					var index = $(this).index();
-//					consloe.log(index);
+			  $(".banner-ul li").click(function(){
+					var index = $(this).index();
+					consloe.log(index);
 					$("#show_tit").text($(this).find("a").text());
 				});
-								
+	
 				//模拟获取后台数据，显示在show中
 			  var goodsArr = [{
 					"img": "img/goods1.png",
@@ -184,11 +183,15 @@
 			      
 				}
 				
+				
 				//更改页码最后一页数字
 				var page = Math.ceil(goodsArr.length/4);
 				
 				$('#page_num').text(page);
 				
+				
+		
+							
 				
 			});
 		</script>
@@ -295,7 +298,7 @@
 			<div id="show">
 				<div class="show_con">
 					<div class="show_title">
-						<a href="#" id="show_tit">电子产品</a>
+						<a href="#" id="show_tit">商品列表</a>
 						<hr id="s_hr1" />
 						<hr id="s_hr2" />
 					</div>

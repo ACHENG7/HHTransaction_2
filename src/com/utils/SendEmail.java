@@ -1,5 +1,6 @@
 package com.utils;
 import java.util.Properties;
+import java.util.UUID;
 
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -50,7 +51,7 @@ public class SendEmail {
                 msg.setFrom(new InternetAddress("2983526367@qq.com"));  
                 msg.addRecipients(Message.RecipientType.TO, InternetAddress.parse(to));   
                 msg.setSubject("激活邮件");   
-                msg.setContent("<h1>此邮件为官方激活邮件！请点击下面链接完成激活操作！</h1><h3>欢迎注册黄淮二手商城会员<a href='http://localhost:8080/HHTransaction/login.html'>点击进入</a></h3>","text/html;charset=UTF-8");
+                msg.setContent("<h1>此邮件为官方激活邮件！请点击下面链接完成激活操作！</h1><h3>欢迎注册黄淮二手商城会员<a href='http://localhost:8080/HHTransaction/login.jsp'>点击进入</a></h3><br/><h3>验证码为"+code+"</h3>","text/html;charset=UTF-8");
                 msg.saveChanges();  
 
                 Transport transport = mailSession.getTransport("smtp");  

@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.annotation.Resource;
 
@@ -203,7 +204,10 @@ public class VipAction extends ActionSupport{
 	 */
 	public String register() {
 		SendEmail sendEmail = new SendEmail();
-		sendEmail.sendMail(email, "123");	
+		UUID id = UUID.randomUUID();
+		String[] idd = id.toString().split("-");
+		String code = idd[0].substring(0, 5);
+		sendEmail.sendMail(email, code);	
 	if(nickname!=null) {
 		VipInfo vip = new VipInfo();
 		vip.setVipNickName(nickname);
